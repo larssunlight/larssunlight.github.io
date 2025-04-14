@@ -1,0 +1,167 @@
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五組台中旅館</title>
+    <style>
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #map {
+            height: 100px;
+            width: 500%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin-bottom: 10px;">
+        組員名單：S11410108歐凡瑩  S11410107王紹宇 S10410335許容禎 S11410213謝昊玲 S11410141王政元
+    </div>
+	
+<p class="centered-title">
+        <h1 style="text-align: center;">台中市星級旅館資料</h1>
+        以下將列出台中市的星級旅館資料，包含其標章、名稱及地址等資訊。以及後面我們推測出的故事。
+    </p>
+
+    <h2 style="text-align: center;">簡單介紹</h2>
+    <p>台中市擁有豐富的觀光資源，吸引了來自各地的遊客。為了提供舒適的住宿體驗，台中市擁有各式各樣的旅館，其中不乏提供高品質服務的星級旅館。本頁面將展示部分台中市星級旅館的分布情況與基本資訊，希望能幫助您更好地了解台中市的住宿選擇。</p>
+
+    <h2>台中市旅館地圖</h2>
+    
+	</style>
+	
+<div id="map"></div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d465742.30590809905!2d120.62552631417473!3d24.22037313718564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346917dff97922ef%3A0x87523ee47ea6447f!2z5Y-w5Lit5biC!5e0!3m2!1szh-TW!2stw!4v1744495968600!5m2!1szh-TW!2stw" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h2 style="text-align: center;">台中市星級旅館資料表格</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>標章</th>
+                <th>名稱</th>
+                <th>地址</th>
+				<th>房間數</th>
+            </tr>
+        </thead>
+        <tbody id="hotel-table-body">
+            <tr>
+                <td>五星級</td>
+				<td><a href="https://www.millenniumhotels.com/zh-tw/taichung/millennium-hotel-taichung/">日月千禧酒店</a></td>
+				<td>臺中市西屯區市政路77號</td>
+				<td>243</td>
+            </tr>
+            <tr>
+                <td>五星級</td>
+                <td><a href="https://www.millenniumhotels.com/zh-tw/taichung/millennium-hotel-taichung/">長榮桂冠酒店(台中)</a></td>
+				<td>臺中市西屯區臺灣大道二段666號</td>
+				<td>354</td>
+            </tr>
+			<tr>
+                <td>二星級</td>
+                <td><a href="https://www.viphotel.com.tw/portfolio/chance-hotel/">巧合大飯店</a></td>
+				<td>臺中市中區建國路163號</td>
+				<td>123</td>
+            </tr>
+			<tr>
+                <td>三星級</td>
+                <td><a href="https://www.zkhotel.com.tw/">中科大飯店</a></td>
+                <td>臺中市北屯區旅順路2段7號1至19樓</td>
+				<td>225</td>
+            </tr>
+			<tr>
+                <td>二星級</td>
+                <td><a href="https://gorates-hotel.com/web/summary/58">創意時尚旅店</a></td>
+                <td>臺中市北區五權路332、334號1至7樓</td>
+				<td>98</td>
+            </tr>
+			<tr>
+                <td>三星級</td>
+                <td><a href="http://www.parkcthotel.com/">成旅晶贊飯店</a></td>
+                <td>臺中市中區民權路66號、繼光街25號1至9樓</td>
+				<td>109</td>
+            </tr>
+			<tr>
+                <td>四星級</td>
+                <td><a href="https://tchhotel.com/">台中港酒店</a></td>
+                <td>臺中市梧棲區大智路二段388號</td>
+				<td>200</td>
+            </tr>
+			<tr>
+                <td>五星級</td>
+                <td><a href="https://www.freshfields.com.tw/">清新溫泉飯店</a></td>
+                <td>臺中市烏日區溫泉路2號</td>
+				<td>155</td>
+            </tr>
+			<tr>
+                <td>二星級</td>
+                <td><a href="http://www.meijourneyhotel.com/">美之旅商務飯店</a></td>
+                <td>臺中市西區美村路一段269號</td>
+				<td>56</td>
+            </tr>
+			<tr>
+                <td>五星級</td>
+                <td><a href="https://www.windsortaiwan.com/tw">裕元花園酒店</a></td>
+                <td>臺中市西屯區台灣大道四段610號(台中港路3段78-3號)</td>
+				<td>149</td>
+            </tr>
+			<tr>
+                <td>二星級</td>
+                <td><a href="https://www.taiwantravelmap.com/hotel/1074-ch-index.html">墨鐵會館</a></td>
+                <td>臺中市中區柳川西路三段19號1樓、4樓至12樓</td>
+				<td>52</td>
+            </tr>
+			<tr>
+                <td>三星級</td>
+                <td><a href="https://www.fushin-hotel.com.tw/taichung/tw/about/">台中富信大飯店</a></td>
+                <td>臺中市中區市府路14號</td>
+				<td>40</td>
+            </tr>
+			<tr>
+                <td>三星級</td>
+                <td><a href="https://www.allurmotel.com/room.php?cid=8">歐遊國際精品旅館(台中館)</</a></td>
+                <td>臺中市南屯區文心南路98號</td>
+				<td>222</td>
+            </tr>
+			<tr>
+                <td>二星級</td>
+                <td><a href="https://www.ourseahotel.com/">梧棲行旅</a></td>
+                <td>臺中市梧棲區大仁路2段291巷10號</td>
+				<td>54</td>
+            </tr>
+			<tr>
+                <td>二星級</td>
+                <td><a href="https://www.viphotel.com.tw/portfolio/palmer-hotel/">博奇大飯店</a></td>
+                <td>臺中市中區雙十路一段5號</td>
+				<td>134</td>
+            </tr>
+			<tr>
+                <td>三星級</td>
+                <td><a href="http://taichung.villa-group.com.tw/">挪威森林文創休閒旅館</a></td>
+                <td>臺中市南區正氣街36號</td>
+				<td>45</td>
+            </tr>
+			<tr>
+                <td>三星級	</td>
+				<td><a href="http://tc.cloud-hotel.com.tw/zh-tw">雲端商務旅館</a></td>
+                <td>臺中市中區公園路36號</td>
+				<td>112</td>
+            </tr>
+            </tbody>
+    </table>
+
+    <h2>台中市旅館分布推斷與未來規劃</h2>
+    <p>根據目前台中市旅館的分布情況，我們可以觀察到 [在此處根據地圖和表格數據進行分析和推斷]。</p>
+    <p>未來，我們可以考慮 [在此處提出可能的未來規劃或想法]。</p>
+</body>
+</html>
