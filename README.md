@@ -39,7 +39,6 @@
   <div id="mapid"></div>
 HTML
 
-<!DOCTYPE html>
 <html>
 <head>
   <title>第五組商務網站設計</title>
