@@ -10,7 +10,7 @@
 
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">第五組</a>
+            <a href="README.md" class="logo">第五組</a>
             <ul>
                 <li><a href="#products">所有產品</a></li>
                 <li><a href="#how-to-order">訂購說明</a></li>
