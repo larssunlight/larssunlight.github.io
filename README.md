@@ -38,7 +38,7 @@
             <div class="product-grid container">
                 <div class="product-item">
                     <h3>ONGO 花結棒球帽</h3>
-                    <a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-a-detail.html">
+                    <a href="[C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-a-detail.html](https://github.com/larssunlight/larssunlight.github.io/blob/b8ffb2fa9e290ce3ee3647f36011a0ef834782f3/%E7%94%A2%E5%93%811)">
                         <img src="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\image\product-a-large.jpeg" alt="ONGO 花結棒球帽" width="200" height="150">
                     </a>
                     <p class="price">NT$ 1250</p>
