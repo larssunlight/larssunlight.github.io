@@ -10,9 +10,9 @@
 
     <header>
         <nav class="container">
-            <a href="README.md" class="logo">第五組</a>
+            <a href="[README.md](https://github.com/larssunlight/larssunlight.github.io/blob/04b46393684a3e938624a79d0ccbe6c30b96cbdd/README.md)" class="logo">第五組</a>
             <ul>
-                <li><a href="#products">所有產品</a></li>
+                <li><a href="[#products](https://github.com/larssunlight/larssunlight.github.io/blob/04b46393684a3e938624a79d0ccbe6c30b96cbdd/README.md)">所有產品</a></li>
                 <li><a href="#how-to-order">訂購說明</a></li>
                 <li><a href="#member-policy">會員政策</a></li>
                 <li><a href="#privacy-policy">隱私權說明</a></li>
@@ -153,7 +153,7 @@
             <div class="footer-section links">
                 <h3>快速連結</h3>
                 <ul>
-                    <li><a href="#products">所有產品</a></li>
+                    <li><a href="[#products](https://github.com/larssunlight/larssunlight.github.io/blob/04b46393684a3e938624a79d0ccbe6c30b96cbdd/README.md)">所有產品</a></li>
                     <li><a href="#how-to-order">訂購說明</a></li>
                     <li><a href="#member-policy">會員政策</a></li>
                     <li><a href="#privacy-policy">隱私權說明</a></li>
