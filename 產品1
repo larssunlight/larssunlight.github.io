@@ -1,0 +1,93 @@
+!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONGO 花結棒球帽 - 您的商品平台名稱</title>
+    <link rel="stylesheet" href="C:\Users\hsuju\OneDrive\桌面\css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">第五組</a>
+            <ul>
+                <li><a href="index.html#products">所有產品</a></li>
+                <li><a href="index.html#how-to-order">訂購說明</a></li>
+                <li><a href="index.html#member-policy">會員政策</a></li>
+                <li><a href="index.html#privacy-policy">隱私權說明</a></li>
+                <li><a href="#">登入 / 註冊</a></li>
+                <li><a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\cart.html">購物車 <i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="搜尋商品...">
+            <button type="submit">搜尋</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="current-product-detail" class="product-detail-page container">
+            <h2>ONGO 花結棒球帽</h2>
+            <div class="product-media">
+                <img src="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\image\hero-banner.jpg.webp" alt="ONGO 花結棒球帽"width="400" height="350>
+            </div>
+            <div class="product-description">
+                <h3>產品詳細說明</h3>
+                <ul>
+                    <li><strong>售價：</strong> NT$ 1250</li>
+                    <li><strong>特點：</strong>
+                        <ul>
+                            <li>棒球帽以「Old Things Never Die」為設計概念</li>
+                            <li>每頂帽子的調節帶改為繩索設計，呈現獨特的美感與意義，讓現代時尚與歷史文化融合</li>
+                            <li>這款集合帽帽型較深，搭配大帽簷，還可以修補修飾臉型。男女皆可穿戴</li>
+                        </ul>
+                    </li>
+                    <li><strong>注意：</strong> 此為現貨商品 下單後『預計』2~3天寄出 (不含例假日)</li>
+                </ul>
+                <button class="btn add-to-cart-btn">加入購物車</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-section about">
+                <h3>關於我們</h3>
+                <p>owner 염규리
+서울 중구 필동로 27-1,2층
+558-50-00386
+2019-서울중구-1354[사업자정보확인]</p>
+                <div class="contact-info">
+                    <span><i class="fas fa-map-marker-alt"></i> 公司名稱: ONGO</span>
+                    <span><i class="fas fa-phone"></i> 官方IG：ongo.official</span>
+                    <span><i class="fas fa-envelope"></i> 客服信箱：ongo.korea@gmail.com</span>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>快速連結</h3>
+                <ul>
+                    <li><a href="index.html#products">所有產品</a></li>
+                    <li><a href="index.html#how-to-order">訂購說明</a></li>
+                    <li><a href="index.html#member-policy">會員政策</a></li>
+                    <li><a href="index.html#privacy-policy">隱私權說明</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>追蹤他們</h3>
+                <a href="https://www.instagram.com/ongo.official/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 商務網站設計第五組. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v12.0" nonce="YOUR_NONCE_VALUE"></script>
+
+</body>
+</html>
