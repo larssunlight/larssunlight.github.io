@@ -1,288 +1,177 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-  <title>第五組商務網站設計</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <style>
-    #mapid { height: 400px; width: 100%; } /* 調整地圖寬度以適應頁面 */
-    .landmark-icon {
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 14px;
-      border: 2px solid black;
-    }
-    .five-star { background-color: gold; color: black; }
-    .four-star { background-color: purple; }
-    .three-star { background-color: blue; }
-    .two-star { background-color: gray; }
-  </style>
-</head>
-<body>
-    
-	<h1>組員名單</h1>
- <ul>
-    <li>S11410108 歐凡瑩</li>
-    <li>S11410107 王紹宇</li>
-    <li>S10410335 許容禎</li>
-    <li>S11410213 謝昊玲</li>
-    <li>S11410141 王政元</li>
-  </ul>
-  <h2>第五組商務網站設計</h2>
-
-  <p>台中市擁有豐富的觀光資源，吸引了來自各地的遊客。為了提供舒適的住宿體驗，台中市擁有各式各樣的旅館，其中不乏提供高品質服務的星級旅館。本頁面將展示部分台中市星級旅館的分布情況與基本資訊，希望能幫助您更好地了解台中市的住宿選擇。</p>
-
-  <h2>台中市旅館分布地圖</h2>
-  <div id="mapid"></div>
-HTML
-
-<html>
-<head>
-  <title>第五組商務網站設計</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <style>
-    #mapid { height: 600px; width: 100%; }
-    .landmark-icon {
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 14px;
-      border: 2px solid black;
-    }
-    .five-star { background-color: gold; color: black; }
-    .four-star { background-color: purple; }
-    .three-star { background-color: blue; }
-    .two-star { background-color: gray; }
-
-    h2 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      overflow: hidden;
-      font-size: 16px;
-    }
-
-    thead {
-      background-color: #4CAF50; /* Green header */
-      color: white;
-      font-weight: bold;
-    }
-
-    th, td {
-      padding: 12px 15px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    tbody tr:hover {
-      background-color: #e0f7fa;
-    }
-
-    td a {
-      color: #007bff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    td a:hover {
-      color: #0056b3;
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商務網站設計第五組 - 探索優質商品</title>
+    <link rel="stylesheet" href="C:\Users\hsuju\OneDrive\桌面\css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-  <h2>台中市星級旅館資料表格</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>星級</th>
-        <th>旅館名稱</th>
-        <th>地址</th>
-        <th>連絡電話</th>
-      </tr>
-    </thead>
-    <tbody id="hotel-table-body">
-      <tr>
-        <td>五星級</td>
-        <td><a href="https://www.millenniumhotels.com/zh-tw/taichung/millennium-hotel-taichung/" target="_blank">日月千禧酒店</a></td>
-        <td>臺中市西屯區市政路77號</td>
-        <td>0437056000</td>
-      </tr>
-      <tr>
-        <td>五星級</td>
-        <td><a href="https://taichung.evergreen-hotels.com/tw/index.aspx" target="_blank">長榮桂冠酒店(台中)</a></td>
-        <td>臺中市西屯區臺灣大道二段666號</td>
-        <td>0423139988</td>
-      </tr>
-      <tr>
-        <td>二星級</td>
-        <td><a href="https://www.viphotel.com.tw/portfolio/chance-hotel/" target="_blank">巧合大飯店</a></td>
-        <td>臺中市中區建國路163號</td>
-        <td>0422297161</td>
-      </tr>
-      <tr>
-        <td>三星級</td>
-        <td><a href="https://www.zkhotel.com.tw/" target="_blank">中科大飯店</a></td>
-        <td>臺中市北屯區旅順路2段7號1至19樓</td>
-        <td>0422465599</td>
-      </tr>
-      <tr>
-        <td>二星級</td>
-        <td><a href="https://gorates-hotel.com/web/summary/58" target="_blank">創意時尚旅店</a></td>
-        <td>臺中市北區五權路332、334號1至7樓</td>
-        <td>0422022666</td>
-      </tr>
-      <tr>
-        <td>三星級</td>
-        <td><a href="http://www.parkcthotel.com/" target="_blank">成旅晶贊飯店</a></td>
-        <td>臺中市中區民權路66號、繼光街25號1至9樓</td>
-        <td>0422235678</td>
-      </tr>
-      <tr>
-        <td>四星級</td>
-        <td><a href="https://tchhotel.com/" target="_blank">台中港酒店</a></td>
-        <td>臺中市梧棲區大智路二段388號</td>
-        <td>0426568888</td>
-      </tr>
-      <tr>
-        <td>五星級</td>
-        <td><a href="https://www.freshfields.com.tw/" target="_blank">清新溫泉飯店</a></td>
-        <td>臺中市烏日區溫泉路2號</td>
-        <td>0423829888</td>
-      </tr>
-      <tr>
-        <td>二星級</td>
-        <td><a href="http://www.meijourneyhotel.com/" target="_blank">美之旅商務飯店</a></td>
-        <td>臺中市西區美村路一段269號</td>
-        <td>0423024330</td>
-      </tr>
-      <tr>
-        <td>五星級</td>
-        <td><a href="https://www.windsortaiwan.com/tw" target="_blank">裕元花園酒店</a></td>
-        <td>臺中市西屯區台灣大道四段610號(台中港路3段78-3號)</td>
-        <td>0424656555</td>
-      </tr>
-      <tr>
-        <td>二星級</td>
-        <td><a href="https://www.taiwantravelmap.com/hotel/1074-ch-index.html" target="_blank">墨鐵會館</a></td>
-        <td>臺中市中區柳川西路三段19號1樓、4樓至12樓</td>
-        <td>0422270088</td>
-      </tr>
-      <tr>
-        <td>三星級</td>
-        <td><a href="https://www.fushin-hotel.com.tw/taichung/tw/about/" target="_blank">台中富信大飯店</a></td>
-        <td>臺中市中區市府路14號</td>
-        <td>0422296999</td>
-      </tr>
-      <tr>
-        <td>三星級</td>
-        <td><a href="https://www.allurmotel.com/room.php?cid=8" target="_blank">歐遊國際精品旅館(台中館)</a></td>
-        <td>臺中市南屯區文心南路98號</td>
-        <td>0424727711</td>
-      </tr>
-      <tr>
-        <td>二星級</td>
-        <td><a href="https://www.ourseahotel.com/" target="_blank">梧棲行旅</a></td>
-        <td>臺中市梧棲區大仁路2段291巷10號</td>
-        <td>0426570857</td>
-      </tr>
-      <tr>
-        <td>二星級</td>
-        <td><a href="https://www.viphotel.com.tw/portfolio/palmer-hotel/" target="_blank">博奇大飯店</a></td>
-        <td>臺中市中區雙十路一段5號</td>
-        <td>0422296151</td>
-      </tr>
-      <tr>
-        <td>三星級</td>
-        <td><a href="http://taichung.villa-group.com.tw/" target="_blank">挪威森林文創休閒旅館</a></td>
-        <td>臺中市南區正氣街36號</td>
-        <td>0422873636</td>
-      </tr>
-      <tr>
-        <td>三星級</td>
-        <td><a href="http://tc.cloud-hotel.com.tw/zh-tw" target="_blank">雲端商務旅館</a></td>
-        <td>臺中市中區公園路36號</td>
-        <td>0422288168</td>
-      </tr>
-    </tbody>
-  </table>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">第五組</a>
+            <ul>
+                <li><a href="#products">所有產品</a></li>
+                <li><a href="#how-to-order">訂購說明</a></li>
+                <li><a href="#member-policy">會員政策</a></li>
+                <li><a href="#privacy-policy">隱私權說明</a></li>
+                <li><a href="#">登入 / 註冊</a></li>
+                <li><a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\cart.html" id="cart-link">購物車 <i class="fas fa-shopping-cart"></i> <span id="cart-count" class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="搜尋商品...">
+            <button type="submit">搜尋</button>
+        </div>
+    </header>
 
-  <h2>台中市旅館分布推斷與未來規劃</h2>
-  <p>根據目前台中市旅館的分布情況，我們可以觀察到大部分旅館旅館分布在台中火車站附近。</p>
-  <p>未來，我們可以考慮因為市中心星級旅館的持續繁榮與升級。 隨著台中火車站周邊交通機能的提升（例如：捷運藍線的開通），以及都市更新計畫的推動，該區域的商業活動將更加蓬勃。五星級或更好的旅館可能會持續吸引高端商務旅客和觀光客，並為了維持競爭力而進行設施和服務的升級，甚至引進更具特色的主題或設計。</p>
+    <main>
+        <section id="hero-banner">
+            <h1>歡迎來到您的線上商城</h1>
+            <p>探索我們豐富的產品，享受便捷的購物體驗！</p>
+            <a href="#products" class="btn">立即選購</a>
+        </section>
 
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script>
-    var mymap = L.map('mapid').setView([24.15, 120.65], 12); // 設定地圖中心和縮放
+        <section id="products">
+            <h2>精選商品</h2>
+            <div class="product-grid container">
+                <div class="product-item">
+                    <h3>ONGO 花結棒球帽</h3>
+                    <a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-a-detail.html">
+                        <img src="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\image\product-a-large.jpeg" alt="ONGO 花結棒球帽" width="200" height="150">
+                    </a>
+                    <p class="price">NT$ 1250</p>
+                    <button class="btn add-to-cart-btn">加入購物車</button>
+                    <a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-a-detail.html" class="btn view-detail-btn">查看詳細</a>
+                </div>
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-    }).addTo(mymap);
+                <div class="product-item">
+                    <h3>Marithé François Girbaud經典LOGO棒球帽 黑色</h3>
+                    <a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-b-detail.html">
+                        <img src="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\image\product-b-large.jpg" alt="Marithé François Girbaud" width="200" height="150">
+                    </a>
+                    <p class="price">NT$ 1490</p>
+                    <button class="btn add-to-cart-btn">加入購物車</button>
+                    <a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-b-detail.html" class="btn view-detail-btn">查看詳細</a>
+                </div>
 
-    // 旅館資料陣列 (包含星級)
-    var hotels = [
-      { name: '台中日月千禧酒店', star: 5, lat: 24.1567302, lng: 120.6394838 },
-      { name: '長榮桂冠酒店(台中)', star: 5, lat: 24.1589291, lng: 120.6545249 },
-      { name: '巧合大飯店', star: 2, lat: 24.1382495, lng: 120.6827453 },
-      { name: '中科大飯店', star: 3, lat: 24.1748009, lng: 120.6834606 },
-      { name: '創意時尚旅店', star: 2, lat: 24.1521818, lng: 120.6778114 },
-      { name: '成旅晶贊飯店', star: 3, lat: 24.1375375, lng: 120.680427 },
-      { name: '台中港酒店', star: 4, lat: 24.2602639, lng: 120.5311567 },
-      { name: '清新溫泉飯店', star: 5, lat: 24.1422381, lng: 120.6096036 },
-      { name: '美之旅商務飯店', star: 2, lat: 24.1479955, lng: 120.6594073 },
-      { name: '裕元花園酒店', star: 5, lat: 24.1799274, lng: 120.621489 },
-      { name: '墨鐵會館', star: 2, lat: 24.1428135, lng: 120.6742112 },
-      { name: '台中富信大飯店', star: 3, lat: 24.1391338, lng: 120.6772541 },
-      { name: '歐遊國際精品旅館(台中館)', star: 3, lat: 24.1349799, lng: 120.6443397 },
-      { name: '台中金典酒店', star: 5, lat: 24.1560646, lng: 120.6604982 },
-      { name: '梧棲行旅', star: 2, lat: 24.2623909, lng: 120.5331495 },
-      { name: '博奇大飯店', star: 2, lat: 24.1404251, lng: 120.683092 },
-      { name: '挪威森林文創休閒旅館', star: 3, lat: 24.1300544, lng: 120.6797755 },
-      { name: '雲端商務旅館', star: 3, lat: 24.1459917, lng: 120.677806 }
-    ];
+                <div class="product-item">
+                    <h3>MUCENT 小眾品牌 簡約 復古 休閒 Logo 刺繡 棒球帽 老帽</h3>
+                    <a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-c-detail.html">
+                        <img src="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\image\product-c-large.webp" alt="MUCENT" width="200" height="150">
+                    </a>
+                    <p class="price">NT$ 699</p>
+                    <button class="btn add-to-cart-btn">加入購物車</button>
+                    <a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-c-detail.html" class="btn view-detail-btn">查看詳細</a>
+                </div>
+            </div>
+        </section>
 
-    hotels.forEach(function(hotel) {
-      var starClass = '';
-      if (hotel.star === 5) {
-        starClass = 'five-star';
-      } else if (hotel.star === 4) {
-        starClass = 'four-star';
-      } else if (hotel.star === 3) {
-        starClass = 'three-star';
-      } else if (hotel.star === 2) {
-        starClass = 'two-star';
-      }
+        <section id="how-to-order">
+            <h2>訂購流程說明</h2>
+            <div class="order-steps container">
+                <ol>
+                    <li><strong>選擇商品：</strong> 在產品頁面瀏覽並將您喜歡的商品加入購物車。</li>
+                    <li><strong>確認訂單：</strong> 前往購物車頁面，確認商品數量、價格及總金額。</li>
+                    <li><strong>填寫資料：</strong> 填寫收件人資訊、配送地址及聯絡方式。</li>
+                    <li><strong>選擇付款方式：</strong>
+                        <ul>
+                            <li><strong>信用卡支付：</strong> 支援 Visa, MasterCard, JCB 等主流信用卡。</li>
+                            <li><strong>ATM 轉帳：：</strong> 提供指定銀行帳號供您轉帳。</li>
+                            <li><strong>行動支付：</strong> 支援 Line Pay, 街口支付等多元行動支付。</li>
+                            <li><strong>貨到付款：</strong> (若有提供此選項，此處請填寫)</li>
+                        </ul>
+                    </li>
+                    <li><strong>選擇運送方式：</strong>
+                        <ul>
+                            <li><strong>宅配：</strong> 郵局、黑貓宅急便，通常 2-3 個工作天送達。</li>
+                            <li><strong>超商取貨：</strong> 全家、7-ELEVEN (取貨不付款/取貨付款)，通常 3-5 個工作天送達指定門市。</li>
+                        </ul>
+                    </li>
+                    <li><strong>完成訂購：</strong> 確認所有資訊無誤後，送出訂單。</li>
+                    <li><strong>訂單查詢：：</strong> 您可透過會員中心或訂單查詢頁面追蹤訂單狀態。</li>
+                </ol>
+            </div>
+        </section>
 
-      var icon = L.divIcon({
-        className: 'landmark-icon ' + starClass,
-        html: hotel.star // 顯示星級
-      });
+        <section id="member-policy">
+            <h2>會員政策說明</h2>
+            <div class="policy-content container">
+                <h3>一、會員資格與權益</h3>
+                <p>凡於本平台註冊之會員，即可享有以下專屬權益：</p>
+                <ul>
+                    <li>會員購物金回饋，累積消費可兌換折價券。</li>
+                    <li>不定期會員專屬優惠活動與折扣碼。</li>
+                    <li>完整訂單查詢與追蹤功能。</li>
+                    <li>個人化收藏清單功能，方便您追蹤心儀商品。</li>
+                    <li>優先獲取新品資訊與促銷通知。</li>
+                </ul>
+                <h3>二、會員註冊與帳戶管理</h3>
+                <p>會員註冊需提供真實姓名、電子郵件、手機號碼等基本資訊。請您務必妥善保管您的帳號密碼，避免資料外洩。若發現任何帳戶異常，請立即聯繫客服。</p>
+                <h3>三、會員等級與升級</h3>
+                <p>本平台可能根據您的消費金額或頻次，提供不同等級的會員制度（例如：普通會員、銀級會員、金級會員），不同等級享有更高級別的優惠、專屬禮遇及服務。</p>
+                <h3>四、會員資料保護</h3>
+                <p>本平台將依循相關法令（如個人資料保護法），保護會員個人資料的隱私與安全。您的資料僅用於提供服務、行銷活動、客戶服務及改善網站功能。詳情請參閱我們的隱私權政策。</p>
+                <p><strong>請注意：此處僅為會員政策範本，實際請依您企業的法規與規範撰寫完整內容。</strong></p>
+            </div>
+        </section>
 
-      L.marker([hotel.lat, hotel.lng], { icon: icon })
-        .addTo(mymap)
-        .bindPopup(`<strong>${hotel.name}</strong><br>星級：${hotel.star} 星`);
-    });
-  </script>
+        <section id="privacy-policy">
+            <h2>隱私權說明</h2>
+            <div class="policy-content container">
+                <h3>一、資料收集與使用</h3>
+                <p>本平台在您瀏覽、註冊、購物或與我們互動時，會收集您的個人資料，包括但不限於：姓名、聯絡方式（電子郵件、手機號碼、地址）、購買記錄、瀏覽行為、IP 地址等。這些資料僅用於提供、維護、保護及改善我們的服務，例如：處理訂單、寄送商品、提供客戶服務、發送行銷資訊、分析網站使用狀況以優化使用者體驗。</p>
+                <h3>二、資料保護</h3>
+                <p>本平台採用業界標準的安全技術措施保護您的個人資料，包括 SSL 加密傳輸、防火牆、資料庫加密、存取控制等，以防止未經授權的存取、使用、修改或揭露。我們也會定期審查安全措施，確保您的資料安全。</p>
+                <h3>三、資料揭露</h3>
+                <p>除非取得您的明確同意或法律要求（例如法院命令、政府機構調查），本平台不會將您的個人資料揭露給第三方。部分資料可能會在履行訂單時與合作夥伴（如物流公司、金流支付業者）共享，但僅限於必要的範圍內。</p>
+                <h3>四、Cookie 的使用</h3>
+                <p>本平台使用 Cookie 技術來提升您的瀏覽體驗。Cookie 是小型文字檔案，儲存於您的裝置中，用於記憶您的偏好設定、購物車內容、登入狀態、分析網站流量等。您可以透過瀏覽器設定來管理或拒絕 Cookie，但這可能會影響部分網站功能的正常運作。</p>
+                <h3>五、您的權利</h3>
+                <p>您對您的個人資料擁有以下權利：查詢或閱覽、製給複製本、補充或更正、停止蒐集/處理/利用、刪除。如需行使上述權利，請透過本網站提供之客服管道聯繫我們。我們將在法律允許的範圍內儘速處理您的請求。</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-section about">
+                <h3>關於我們</h3>
+                <p>這是商務網站設計第五組期末報告，以上產品皆為實物，且詳細內容有付聯絡資訊，可前往品牌官方做購買。若有侵權或冒犯，請見諒。</p>
+                <div class="contact-info">
+                    <ul>
+                        <li>企4C s10410335 許容禎</li>
+                        <li>企3A s11410107 王紹宇</li>
+                        <li>企3A s11410108 歐凡瑩</li>
+                        <li>企3A s11410141 王政元</li>
+                        <li>企3B s11410213 謝昊玲</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>快速連結</h3>
+                <ul>
+                    <li><a href="#products">所有產品</a></li>
+                    <li><a href="#how-to-order">訂購說明</a></li>
+                    <li><a href="#member-policy">會員政策</a></li>
+                    <li><a href="#privacy-policy">隱私權說明</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            ©商務網站設計第五組. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v12.0"></script>
+
+    <script src="./js/cart.js"></script>
 
 </body>
 </html>
