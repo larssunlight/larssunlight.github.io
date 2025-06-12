@@ -58,7 +58,7 @@
 
                 <div class="product-item">
                     <h3>MUCENT 小眾品牌 簡約 復古 休閒 Logo 刺繡 棒球帽 老帽</h3>
-                    <a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-c-detail.html">
+                    <a href="[C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-c-detail.html](https://github.com/larssunlight/larssunlight.github.io/blob/6eafe4b3648c6b4c5024a39e1f01d30fab8d2a83/%E7%94%A2%E5%93%813)">
                         <img src="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\image\product-c-large.webp" alt="MUCENT" width="200" height="150">
                     </a>
                     <p class="price">NT$ 699</p>
