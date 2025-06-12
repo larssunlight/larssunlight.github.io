@@ -17,7 +17,7 @@
                 <li><a href="#member-policy">會員政策</a></li>
                 <li><a href="#privacy-policy">隱私權說明</a></li>
                 <li><a href="#">登入 / 註冊</a></li>
-                <li><a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\cart.html" id="cart-link">購物車 <i class="fas fa-shopping-cart"></i> <span id="cart-count" class="cart-count">0</span></a></li>
+                <li><a href="[C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\cart.html" id="cart-link](https://github.com/larssunlight/larssunlight.github.io/blob/8ca01da25143c6ad458264e98da51af21415e429/%E8%B3%BC%E7%89%A9%E8%BB%8A)">購物車 <i class="fas fa-shopping-cart"></i> <span id="cart-count" class="cart-count">0</span></a></li>
             </ul>
         </nav>
         <div class="search-bar">
