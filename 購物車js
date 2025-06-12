@@ -1,0 +1,229 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // 取得主要產品區塊，用於監聽「加入購物車」按鈕
+    const productsSection = document.getElementById('products');
+    // 購物車表格的 tbody，用於動態生成商品列表
+    const cartBody = document.getElementById('cart-body');
+    // 顯示購物車總價的 span 元素
+    const cartTotalSpan = document.getElementById('cart-total');
+    // 導覽列和購物車頁面中顯示購物車商品總數量的 span 元素 (querySelectorAll 因為可能有多個)
+    const cartCountSpans = document.querySelectorAll('.cart-count');
+    // 結帳按鈕
+    const checkoutBtn = document.getElementById('checkout-btn');
+    // 清空購物車按鈕
+    const clearCartBtn = document.getElementById('clear-cart-btn');
+    // 購物車為空時顯示的訊息行
+    const emptyCartMessageRow = `<tr><td colspan="5" class="empty-cart-message">您的購物車是空的。</td></tr>`;
+
+    // 從 localStorage 載入購物車資料，如果沒有則初始化為空陣列
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // --- 輔助函數：處理價格格式 ---
+
+    // 將價格字串 (例如 "NT$ 1,250") 轉換為數字 (例如 1250)
+    function parsePrice(priceString) {
+        return parseInt(priceString.replace('NT$ ', '').replace(/,/g, '')); // 移除貨幣符號和千位分隔符
+    }
+
+    // 將數字價格 (例如 1250) 格式化為字串 (例如 "NT$ 1,250")
+    function formatPrice(priceNumber) {
+        return `NT$ ${priceNumber.toLocaleString()}`; // 使用 toLocaleString 處理千位分隔符
+    }
+
+    // --- 更新購物車使用者介面 (UI) ---
+    // 這個函數會在購物車資料變動時被呼叫，重新渲染購物車內容和總價
+    function updateCartUI() {
+        // 確保當前頁面有購物車表格的 tbody 元素才執行後續操作 (避免在 index.html 執行不必要的DOM操作)
+        if (cartBody) {
+            cartBody.innerHTML = ''; // 清空現有的購物車商品列表
+        }
+
+        let total = 0; // 初始化購物車總價
+
+        if (cart.length === 0) {
+            // 如果購物車是空的，顯示空訊息
+            if (cartBody) {
+                cartBody.innerHTML = emptyCartMessageRow;
+            }
+        } else {
+            // 遍歷購物車中的每個商品，動態生成表格行
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity; // 計算商品小計
+                total += subtotal; // 累加到總價
+
+                // 創建新的表格行
+                const row = document.createElement('tr');
+                row.dataset.id = item.id; // 將商品 ID 存儲在 data-id 屬性中，方便後續操作
+
+                row.innerHTML = `
+                    <td data-label="商品">
+                        <div class="cart-item-info">
+                            <img src="${item.image}" alt="${item.name}">
+                            <span class="cart-item-title">${item.name}</span>
+                        </div>
+                    </td>
+                    <td data-label="價格">${formatPrice(item.price)}</td>
+                    <td data-label="數量">
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn decrease-quantity" data-id="${item.id}">-</button>
+                            <input type="number" class="item-quantity-input" value="${item.quantity}" min="1" data-id="${item.id}">
+                            <button class="quantity-btn increase-quantity" data-id="${item.id}">+</button>
+                        </div>
+                    </td>
+                    <td data-label="小計">${formatPrice(subtotal)}</td>
+                    <td data-label="操作">
+                        <button class="remove-item-btn" data-id="${item.id}">移除</button>
+                    </td>
+                `;
+                if (cartBody) {
+                    cartBody.appendChild(row); // 將表格行添加到購物車表格中
+                }
+            });
+        }
+
+        // 更新購物車總價的顯示
+        if (cartTotalSpan) {
+            cartTotalSpan.textContent = formatPrice(total);
+        }
+
+        // 更新導覽列和購物車頁面中顯示的商品總數量
+        const totalItemsInCart = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCountSpans.forEach(span => {
+            span.textContent = totalItemsInCart;
+        });
+
+        saveCart(); // 每次更新 UI 後，將最新的購物車資料儲存到 localStorage
+    }
+
+    // --- 儲存購物車資料到 localStorage ---
+    function saveCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // --- 首頁的「加入購物車」按鈕邏輯 ---
+    // 只有在 productsSection 存在時才監聽，確保只在首頁執行
+    if (productsSection) {
+        productsSection.addEventListener('click', (event) => {
+            // 找到被點擊的「加入購物車」按鈕 (即使點擊的是按鈕內部元素也能找到)
+            const addToCartBtn = event.target.closest('.add-to-cart-btn');
+
+            if (addToCartBtn) {
+                // 獲取按鈕所屬的商品項目
+                const productItem = addToCartBtn.closest('.product-item');
+
+                // 提取商品資訊
+                // 商品 ID 從「查看詳細」連結的 href 中獲取，例如 product-a-detail.html -> product-a
+                const productId = productItem.querySelector('.view-detail-btn').href
+                                            .split('/') // 按斜線分割路徑
+                                            .pop()      // 取最後一個元素 (檔名)
+                                            .replace('.html', ''); // 移除 .html 副檔名
+
+                const productName = productItem.querySelector('h3').textContent;
+                const productPrice = parsePrice(productItem.querySelector('.price').textContent);
+                const productImage = productItem.querySelector('img').src; // 獲取圖片路徑
+
+                // 檢查商品是否已在購物車中
+                const existingItem = cart.find(item => item.id === productId);
+
+                if (existingItem) {
+                    existingItem.quantity += 1; // 如果已存在，數量加 1
+                } else {
+                    // 如果不存在，則添加新商品到購物車陣列
+                    cart.push({
+                        id: productId,
+                        name: productName,
+                        price: productPrice,
+                        image: productImage,
+                        quantity: 1 // 首次加入數量為 1
+                    });
+                }
+                updateCartUI(); // 更新購物車介面
+                alert(`${productName} 已加入購物車！`); // 提示使用者
+            }
+        });
+    }
+
+    // --- 購物車頁面的事件監聽 (數量增減、移除商品) ---
+    // 只有在 cartBody 存在時才監聽，確保只在購物車頁面執行
+    if (cartBody) {
+        cartBody.addEventListener('click', (event) => {
+            const target = event.target; // 獲取被點擊的元素
+            const itemId = target.dataset.id; // 獲取商品的 ID
+
+            // 處理「增加數量」按鈕點擊
+            if (target.classList.contains('increase-quantity')) {
+                const item = cart.find(i => i.id === itemId);
+                if (item) {
+                    item.quantity += 1;
+                    updateCartUI();
+                }
+            }
+            // 處理「減少數量」按鈕點擊
+            else if (target.classList.contains('decrease-quantity')) {
+                const item = cart.find(i => i.id === itemId);
+                if (item) {
+                    if (item.quantity > 1) {
+                        item.quantity -= 1;
+                    } else {
+                        // 如果數量減到 0，則從購物車中移除該商品
+                        cart = cart.filter(i => i.id !== itemId);
+                    }
+                    updateCartUI();
+                }
+            }
+            // 處理「移除」按鈕點擊
+            else if (target.classList.contains('remove-item-btn')) {
+                if (confirm('確定要從購物車中移除此商品嗎？')) {
+                    cart = cart.filter(item => item.id !== itemId); // 過濾掉要移除的商品
+                    updateCartUI();
+                }
+            }
+        });
+
+        // 監聽數量輸入框的改變事件 (例如使用者直接輸入數字)
+        cartBody.addEventListener('change', (event) => {
+            const target = event.target;
+            // 檢查是否是數量輸入框
+            if (target.classList.contains('item-quantity-input')) {
+                const itemId = target.dataset.id;
+                let newQuantity = parseInt(target.value); // 獲取輸入的新數量
+
+                const item = cart.find(i => i.id === itemId);
+                if (item) {
+                    // 驗證輸入的數量，確保是有效數字且不小於 1
+                    if (isNaN(newQuantity) || newQuantity < 1) {
+                        newQuantity = 1; // 無效輸入則設為 1
+                        target.value = 1; // 更新輸入框顯示為 1
+                    }
+                    item.quantity = newQuantity;
+                    updateCartUI();
+                }
+            }
+        });
+
+        // 「清空購物車」按鈕事件
+        if (clearCartBtn) {
+            clearCartBtn.addEventListener('click', () => {
+                if (confirm('確定要清空購物車嗎？')) {
+                    cart = []; // 清空購物車陣列
+                    updateCartUI(); // 更新介面
+                }
+            });
+        }
+
+        // 「前往結帳」按鈕事件
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener('click', () => {
+                if (cart.length === 0) {
+                    alert('您的購物車是空的，請先添加商品！');
+                } else {
+                    alert('前往結帳 (此為演示功能，實際應用中會導向結帳頁面)');
+                    // 實際應用中，您會在這裡導向到真正的結帳頁面
+                    // 例如: window.location.href = 'checkout.html';
+                }
+            });
+        }
+    }
+
+    // 頁面載入時初始化購物車 UI (顯示localStorage中的內容)
+    updateCartUI();
+});
