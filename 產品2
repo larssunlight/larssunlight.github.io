@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marithé François Girbaud經典LOGO棒球帽 黑色 - 您的商品平台名稱</title>
+    <link rel="stylesheet" href="C:\Users\hsuju\OneDrive\桌面\css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">第五組</a>
+            <ul>
+                <li><a href="index.html#products">所有產品</a></li>
+                <li><a href="index.html#how-to-order">訂購說明</a></li>
+                <li><a href="index.html#member-policy">會員政策</a></li>
+                <li><a href="index.html#privacy-policy">隱私權說明</a></li>
+                <li><a href="#">登入 / 註冊</a></li>
+                <li><a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\cart.html">購物車 <i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="搜尋商品...">
+            <button type="submit">搜尋</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="current-product-detail" class="product-detail-page container">
+            <h2>Marithé François Girbaud經典LOGO棒球帽 黑色</h2>
+            <div class="product-media">
+                <img src="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\image\product-b-large.jpg" alt="Marithé François Girbaud經典LOGO棒球帽 黑色"width="400" height="350>
+            </div>
+            <div class="product-description">
+                <h3>產品詳細說明</h3>
+                <ul>
+                    <li><strong>售價：</strong> NT$ 1490</li>
+                    <li><strong>特點：</strong>
+                        <ul>
+                            <li>代表Marithé François Girbaud經典系列的產品 </li>
+                            <li>**特別設計為深版型，適合不同頭型佩戴</li>
+							<li>外層：棉 100%</li>
+                        </ul>
+                    </li>
+                    <li><strong>尺寸：</strong> 尺碼（cm）OS  
+高度：16  
+頭圍：58  
+帽簷：7.5</li>
+                </ul>
+                <button class="btn add-to-cart-btn">加入購物車</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-section about">
+                <h3>關於我們</h3>
+                <p>品牌以大膽率性的設計風格和實穿性見長，長期專注於創新的面料與剪裁技術，巧妙融合街頭元素與法式時尚，打造出獨樹一幟的品牌風格。</p>
+                <div class="contact-info">
+                    <span><i class="fas fa-map-marker-alt"></i> 公司名稱:香港商米斯托有限公司台灣分公司</span>
+                    <span><i class="fas fa-phone"></i> 官方IG：marithe_tw</span>
+                    <span><i class="fas fa-envelope"></i> Tel: 2716-9566</span>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h3>快速連結</h3>
+                <ul>
+                    <li><a href="index.html#products">所有產品</a></li>
+                    <li><a href="index.html#how-to-order">訂購說明</a></li>
+                    <li><a href="index.html#member-policy">會員政策</a></li>
+                    <li><a href="index.html#privacy-policy">隱私權說明</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>追蹤他們</h3>
+                <a href="https://www.instagram.com/marithe_tw" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 商務網站設計第五組. All rights reserved.
+        </div>
+    </footer>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v12.0" nonce="YOUR_NONCE_VALUE"></script>
+
+</body>
+</html>
