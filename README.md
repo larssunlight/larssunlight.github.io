@@ -48,7 +48,7 @@
 
                 <div class="product-item">
                     <h3>Marithé François Girbaud經典LOGO棒球帽 黑色</h3>
-                    <a href="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-b-detail.html">
+                    <a href="[C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\product-b-detail.html](https://github.com/larssunlight/larssunlight.github.io/blob/1fdcb1b6e8a77e5892a221ee8110bc8737b015d9/%E7%94%A2%E5%93%812)">
                         <img src="C:\Users\hsuju\OneDrive\桌面\my-ecommerce-site\image\product-b-large.jpg" alt="Marithé François Girbaud" width="200" height="150">
                     </a>
                     <p class="price">NT$ 1490</p>
